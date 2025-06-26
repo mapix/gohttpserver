@@ -54,6 +54,7 @@ Vue.filter('formatBytes', formatBytes)
 var vm = new Vue({
   el: "#app",
   data: {
+    tableHeight: window.innerHeight,
     virtualScrollOption: {
       enable: false,
     },
@@ -278,6 +279,9 @@ var vm = new Vue({
     }, 1000);
   },
   methods: {
+    updateTableHeight() {
+      this.tableHeight = window.innerHeight;
+    },
     getLocationPathname: function () {
       return decodeURIComponent(location.pathname);
     },
